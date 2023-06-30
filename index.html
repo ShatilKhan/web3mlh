@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Marketplace</title>
+    <script src="https://cdn.ethers.io/lib/ethers-5.5.4.min.js" integrity="sha384-DfXdgqNoxdEvlM1BMFQY3rPQZRU8bsds65eyDf9jqNzjKr/LXK6wp2YOETGbUzQ+" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <title>Item Marketplace</title>
+</head>
+<body>
+    <h1>Item Marketplace</h1>
+    
+    <h2>Register Item</h2>
+    <form id="registerForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"></textarea><br><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity"><br><br>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price"><br><br>
+
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo"><br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <h2>Items for Trade</h2>
+    <div id="itemsList"></div>
+    
+    <!-- Include the MetaMask API integration code -->
+    <script>
+        // Check if MetaMask is installed and available
+        if (typeof window.ethereum !== 'undefined') {
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            
+            // Request access to the user's MetaMask accounts
+            window.ethereum
+                .request({ method: 'eth_requestAccounts' })
+                .then((accounts) => {
+                    // Use the provider and accounts for further interactions
+                    const signer = provider.getSigner(accounts[0]);
+
+                    // Example: Call a contract method
+                    const contractAddress = '0x1234567890abcdef';
+                    const contractABI = [...]; // Replace with the actual ABI
+
+                    const contract = new ethers.Contract(contractAddress, contractABI, signer);
+
+                    // Perform contract method calls, send transactions, etc.
+                    // ...
+                })
+                .catch((error) => {
+                    console.error('Error connecting to MetaMask:', error);
+                });
+        } else {
+            console.error('MetaMask not detected. Please install it.');
+        }
