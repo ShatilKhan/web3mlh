@@ -3,43 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Item Marketplace</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href=".css">
     <script src="https://cdn.ethers.io/lib/ethers-5.5.4.min.js" integrity="sha384-DfXdgqNoxdEvlM1BMFQY3rPQZRU8bsds65eyDf9jqNzjKr/LXK6wp2YOETGbUzQ+" crossorigin="anonymous"></script>
-    <script src="app.js"></script>
-    <title>Item Marketplace</title>
 </head>
 <body>
-    <h1>Item Marketplace</h1>
-    
-    <h2>Register Item</h2>
-    <form id="registerForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
+    <div id="app"></div>
+    <script src="bundle.js"></script>
+</body>
+</html>
 
-        <label for="description">Description:</label>
-        <textarea id="description" name="description"></textarea><br><br>
-
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity"><br><br>
-
-        <label for="price">Price:</label>
-        <input type="number" id="price" name="price"><br><br>
-
-        <label for="photo">Photo:</label>
-        <input type="file" id="photo" name="photo"><br><br>
-
-        <button type="submit">Register</button>
-    </form>
-
-    <h2>Items for Trade</h2>
-    <div id="itemsList"></div>
-    
     <!-- Include the MetaMask API integration code -->
     <script>
         // Check if MetaMask is installed and available
         if (typeof window.ethereum !== 'undefined') {
             const provider = new ethers.providers.Web3Provider(window.ethereum);
-            
+
             // Request access to the user's MetaMask accounts
             window.ethereum
                 .request({ method: 'eth_requestAccounts' })
