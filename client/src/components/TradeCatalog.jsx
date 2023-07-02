@@ -2,12 +2,12 @@ import React from 'react';
 import catalogTrades from './mockData/catalogTrades';
 import CatalogTrade from './CatalogTrade.jsx';
 
-const TradeCatalog = () => {
+const TradeCatalog = ({setSelectedTrade, setCurrentPage}) => {
 
   return (
     <>
-      {catalogTrades.map((trade) => (
-        <CatalogTrade trade={trade} key={trade.id} />
+      {catalogTrades.map((trade, index) => (
+        <CatalogTrade trade={trade} key={index} setSelectedTrade={(e) => {setSelectedTrade(e)}} setCurrentPage={(e) => {setCurrentPage(e);}}/>
       ))}
     </>
   );

@@ -1,13 +1,13 @@
 import React from 'react';
 import TradeCatalog from './TradeCatalog.jsx';
 
-const HomePage = () => {
+const HomePage = ({ setSelectedTrade, setCurrentPage }) => {
   return (
     <>
     <div>
       This is the Home Page
     </div>
-    <TradeCatalog />
+    <TradeCatalog setSelectedTrade={(e) => {setSelectedTrade(e)}} setCurrentPage={(e) => {setCurrentPage(e);}} />
     </>
   );
 }

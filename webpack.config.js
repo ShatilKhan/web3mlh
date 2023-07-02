@@ -16,6 +16,28 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g|gif)$/i, // Updated regex to include PNG files
+        exclude: /node_modules/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'images',
+          },
+        },
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader'],
+      },
+      {
         test: /\.(js|jsx)?/,
         exclude: /node_modules/,
         use: {
@@ -31,17 +53,6 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-        ],
-      },
-      {
-        test: /\.svg$/,
-        use: ['@svgr/webpack', 'url-loader'],
-      },
     ],
   },
   resolve: {
@@ -50,6 +61,7 @@ module.exports = {
       crypto: require.resolve('crypto-browserify'),
       path: require.resolve("path-browserify"),
       stream: require.resolve('stream-browserify'),
+      util: require.resolve("util/"),
     },
   },
 };
