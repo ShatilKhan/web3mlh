@@ -4,9 +4,9 @@ import TradeCatalog from './TradeCatalog.jsx';
 const HomePage = ({ setSelectedTrade, setCurrentPage }) => {
   return (
     <>
-    <div>
-      This is the Home Page
-    </div>
+    <h1>
+      Home Page
+    </h1>
     <TradeCatalog setSelectedTrade={(e) => {setSelectedTrade(e)}} setCurrentPage={(e) => {setCurrentPage(e);}} />
     </>
   );

@@ -5,23 +5,30 @@ import styled from 'styled-components';
 const Trade = styled.div`
 height: 20%;
 width: 20%;
-background-color: grey;
+background-color: #1B8FAA;
 margin-bottom: 3%;
 display: flex;
 flex-direction: column;
 padding: 3%;
 align-items: center;
+border-radius: 5%;
 `;
 
 const ImageBox = styled.div`
 height: 40%;
 width: 100%;
 padding: 10%;
-`
+justify-content: center;
+align-items: center;
+`;
+
 
 const ItemDescription = styled.div`
   height: 40%;
   width: 100%;
+  background-color: #f0f0f0;
+  padding: 10px
+  border-radius: 5%;
 `;
 
 const CatalogTrade = ({ trade, setSelectedTrade, setCurrentPage }) => {

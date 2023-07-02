@@ -3,33 +3,39 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 const Modal = styled.div`
-  background-color: purple;
-  position: fixed;
-  height: 80%;
-  width: 80%;
-  z-index: 2;
-  top: 10%;
-  left: 10%;
+background-color: purple;
+position: fixed;
+height: 80%;
+width: 80%;
+z-index: 2;
+top: 10%;
+left: 10%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+border-radius: 5%;
 `;
 
 const Trades = styled.div`
-background-color: white;
 height: 80%;
 width: 94%;
 left: 3%;
 display: flex;
 flex-direction: row;
-align-content: center;
+justify-content: center;
+align-items: center;
 `
 
 const Trade = styled.div`
 height: 70%;
 width: 30%;
-background-color: grey;
+background-color: #1B8FAA;
 display: flex;
 flex-direction: column;
 padding: 3%;
 align-items: center;
+margin: 5%;
+border-radius: 5%;
 `;
 
 const ImageBox = styled.div`
@@ -41,6 +47,14 @@ padding: 10%;
 const ItemDescription = styled.div`
   height: 40%;
   width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 5%;
+`;
+
+const confirmButton = styled.div`
+  width: 60%;
+    align-self: center;
+    height: 5%;
 `;
 
 const SendRequest = ({ selectedItem, selectedTrade, setCurrentPage }) => {
@@ -91,7 +105,7 @@ const SendRequest = ({ selectedItem, selectedTrade, setCurrentPage }) => {
       </ItemDescription>
         </Trade>
       </Trades>
-      <button onClick={() => { setCurrentPage('home page') }}>confirm</button>
+      <confirmButton onClick={() => { setCurrentPage('home page') }}>confirm</confirmButton>
     </Modal>
   )
 }

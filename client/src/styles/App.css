@@ -1,0 +1,56 @@
+/* styles/App.css */
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  /* MyGroup component styles */
+
+  .MyGroup {
+    margin-top: 20px;
+  }
+
+  .button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: #0056b3;
+  }
+
+  .text {
+    margin-top: 10px;
+  }
+
+  .link {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .link:hover {
+    text-decoration: underline;
+  }
+
+  /* Pages component styles */
+
+  .Pages {
+    margin-top: 20px;
+  }
+
+  .page {
+    margin-bottom: 10px;
+  }
