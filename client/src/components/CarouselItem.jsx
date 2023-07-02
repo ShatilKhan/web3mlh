@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import axios from 'axios';
 
 const Item = styled.div`
-background-color: grey;
+background-color: #1B8FAA;
 width: 300px;
 margin: 5%;
 display: flex;
 flex-direction: column;
 align-content: center;
+border-radius: 5%;
 `
 const ImageBox = styled.div`
 height: 40%;
@@ -19,6 +20,8 @@ padding: 10%;
 const ItemDescription = styled.div`
   height: 40%;
   width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 5%;
 `;
 
 const CarouselItem = ({ item }) => {

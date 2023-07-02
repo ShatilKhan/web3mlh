@@ -1,0 +1,31 @@
+import React from "react"()
+    /* <link rel="stylesheet" href="styles.css" /> */
+function RegisterTradePage
+  return (
+    <div className="wrapper">
+      <form action="">
+        <h1>Item Marketplace</h1>
+        <h3>Register Item</h3>
+        <div className="input-box">
+          <input type="text" placeholder="Name" required />
+        </div>
+        <div className="input-box">
+          <input type="text" placeholder="Description" required />
+        </div>
+        <div className="input-box">
+          <input type="number" placeholder="Quantity" required />
+        </div>
+        <div className="input-box">
+          <input type="number" placeholder="Price" required />
+        </div>
+        <div className="input-box">
+          <input type="file" placeholder="Choose file" required />
+        </div>
+        <div className="register-link"></div>
+        <button type="submit" className="btn">
+          Register
+        </button>
+      </form>
+    </div>
+  );
+export default RegisterItemPage

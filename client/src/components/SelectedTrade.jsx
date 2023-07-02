@@ -9,11 +9,12 @@ import SendRequest from './SendRequest.jsx';
 const Trade = styled.div`
   height: 40%;
   width: 50%;
-  background-color: grey;
+  background-color: #1B8FAA;
   flex-direction: column;
   display: flex;
   padding: 5%;
   align-items: center;
+  border-radius: 5%;
 `;
 
 const ImageBox = styled.div`
@@ -25,6 +26,15 @@ padding: 10%;
 const ItemDescription = styled.div`
   height: 40%;
   width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 5%;
+`;
+
+const CarouselContainer = styled.div`
+width: 50%;
+border: solid;
+border-color: grey;
+background-color: grey;
 `;
 
 const SelectedTrade = ({ selectedTrade, setCurrentPage }) => {
@@ -73,13 +83,15 @@ const SelectedTrade = ({ selectedTrade, setCurrentPage }) => {
       </ItemDescription>
     </Trade>
     <div>Your Items to Trade</div>
-        <Carousel onChange={(e) => { setSelectedItem(yourItems[e]) }}>
+    <CarouselContainer>
+        <Carousel onChange={(e) => { setSelectedItem(yourItems[e]) }} >
           {
             yourItems.map((item, index) => (
               <CarouselItem item={item} key={index}/>
             ))
           }
         </Carousel>
+    </CarouselContainer>
         <button onClick={() => { setShowModal(true); }}>Select</button>
         {(showModal) && (<SendRequest selectedItem={selectedItem} selectedTrade={selectedTrade} setCurrentPage={(e) => { setCurrentPage(e); }}/>)}
     </>
