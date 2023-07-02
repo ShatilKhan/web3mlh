@@ -16,7 +16,7 @@ const Pages = ({ link, text }) => {
     <Tabs setCurrentPage={(e) => { setCurrentPage(e); }}/>
     {(currentPage === 'home page') && (<HomePage setSelectedTrade={(e) => { setSelectedTrade(e); }} setCurrentPage={(e) => {setCurrentPage(e);}} />)}
     {(currentPage === 'profile') && (<Profile />)}
-    {(currentPage === 'selected trade') && (<SelectedTrade selectedTrade={selectedTrade}/>)}
+    {(currentPage === 'selected trade') && (<SelectedTrade selectedTrade={selectedTrade} setCurrentPage={(e) => { setCurrentPage(e); }}/>)}
     {(currentPage === 'register item') && (<RegisterItem />)}
   </div>
   )

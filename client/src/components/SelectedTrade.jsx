@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import yourItems from './mockData/yourItems.js';
 import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import CarouselItem from './CarouselItem.jsx';
+import SendRequest from './SendRequest.jsx';
 
 const Trade = styled.div`
   height: 40%;
@@ -24,16 +27,11 @@ const ItemDescription = styled.div`
   width: 100%;
 `;
 
-const CarouselItem = styled.div`
-background-color: grey;
-width: 100px;
-height: 100px;
-margin: 5%;
-`
-
-const SelectedTrade = ({ selectedTrade }) => {
+const SelectedTrade = ({ selectedTrade, setCurrentPage }) => {
 
   const [page, setPage] = useState('overview');
+  const [showModal, setShowModal] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(yourItems[0]);
 
   return (
     <>
@@ -75,16 +73,15 @@ const SelectedTrade = ({ selectedTrade }) => {
       </ItemDescription>
     </Trade>
     <div>Your Items to Trade</div>
-        <Carousel>
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
+        <Carousel onChange={(e) => { setSelectedItem(yourItems[e]) }}>
+          {
+            yourItems.map((item, index) => (
+              <CarouselItem item={item} key={index}/>
+            ))
+          }
         </Carousel>
+        <button onClick={() => { setShowModal(true); }}>Select</button>
+        {(showModal) && (<SendRequest selectedItem={selectedItem} selectedTrade={selectedTrade} setCurrentPage={(e) => { setCurrentPage(e); }}/>)}
     </>
     )}
     </>
