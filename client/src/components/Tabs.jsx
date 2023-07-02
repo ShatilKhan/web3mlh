@@ -20,6 +20,9 @@ const Tabs = ({ setCurrentPage }) => {
     <Tab onClick={() => { setCurrentPage('profile'); }}>
       Profile
     </Tab>
+    <Tab onClick={() => { setCurrentPage('register item'); }}>
+      Register A Trade
+    </Tab>
   </Bar>
   )
 
