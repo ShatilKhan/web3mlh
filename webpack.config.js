@@ -1,4 +1,5 @@
 require('dotenv').config();
+const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
 const SRC_DIR = path.join(__dirname, '/client/src');
@@ -25,11 +26,7 @@ module.exports = {
               '@babel/preset-react',
             ],
             plugins: [
-              ['@babel/plugin-transform-runtime',
-                {
-                  regenerator: true,
-                },
-              ],
+              ['@babel/plugin-transform-runtime', { regenerator: true }],
             ],
           },
         },
@@ -37,6 +34,7 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
+          'style-loader',
           'css-loader',
         ],
       },
@@ -45,5 +43,13 @@ module.exports = {
         use: ['@svgr/webpack', 'url-loader'],
       },
     ],
+  },
+  resolve: {
+    fallback: {
+      os: require.resolve('os-browserify/browser'),
+      crypto: require.resolve('crypto-browserify'),
+      path: require.resolve("path-browserify"),
+      stream: require.resolve('stream-browserify'),
+    },
   },
 };

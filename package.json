@@ -1,4 +1,11 @@
 {
+  "name": "web3mlh",
+  "description": "",
+  "version": "1.0.0",
+  "main": "babel.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "scripts": {
     "start": "npm run react-dev & npm run server-dev",
     "build": "webpack",
@@ -6,25 +13,36 @@
     "react-dev": "npx webpack --watch"
   },
   "dependencies": {
-    "@babel/core": "^7.22.5",
     "@babel/plugin-transform-runtime": "^7.22.5",
-    "@babel/preset-env": "^7.22.5",
-    "@babel/preset-react": "^7.22.5",
     "@hashgraph/sdk": "^2.29.0",
     "@svgr/webpack": "^8.0.1",
     "axios": "^1.4.0",
-    "babel-loader": "^9.1.2",
+    "babel-plugin-dotenv": "^0.1.1",
     "cors": "^2.8.5",
+    "crypto-browserify": "^3.12.0",
     "css-loader": "^6.8.1",
     "dotenv": "^16.3.1",
+    "ethers": "^5.7.2",
     "express": "^4.18.2",
     "nodemon": "^2.0.22",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "react-switch": "^7.0.0",
+    "stream-browserify": "^3.0.0",
+    "style-loader": "^3.3.3",
+    "styled-components": "^6.0.0-rc.1",
     "url-loader": "^4.1.1",
     "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "babel-loader": "^9.1.2",
+    "dotenv-webpack": "^8.0.1"
   }
 }
